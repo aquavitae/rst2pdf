@@ -417,10 +417,10 @@ class RstToPdf(object):
         elif node.parent.get('enumtype') == 'upperroman':
             b = toRoman(node.parent.children.index(node) + start).upper() + '.'
         elif node.parent.get('enumtype') == 'loweralpha':
-            b = string.lowercase[node.parent.children.index(node)
+            b = string.ascii_letters.lower()[node.parent.children.index(node)
                 + start - 1] + '.'
         elif node.parent.get('enumtype') == 'upperalpha':
-            b = string.uppercase[node.parent.children.index(node)
+            b = string.ascii_letters.upper()[node.parent.children.index(node)
                 + start - 1] + '.'
         else:
             log.critical("Unknown kind of list_item %s [%s]",
